@@ -7,20 +7,20 @@ import things.Thing;
 import java.util.Objects;
 
 public abstract class Person {
-    private String Name;
-    private String Clothes;
+    private String name;
+    private String clothes;
 
     public final void setName(String name){
-        this.Name = name;
+        this.name = name;
     }
     public final String getName(){
-        return Name;
+        return name;
     }
     public final void setClothes(String clothes){
-        this.Clothes = clothes;
+        this.clothes = clothes;
     }
     public final String getClothes(){
-        return Clothes;
+        return clothes;
     }
     public void doAction(Actions act ) {
         Actions action = act.setAction();
@@ -71,18 +71,18 @@ public abstract class Person {
     }
     @Override
     public String toString(){
-        return this.Name;
+        return this.name;
     }
     @Override
     public boolean equals(Object object){
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Person person = (Person) object;
-        return Objects.equals(Name, person.Name);
+        return Objects.equals(name, person.name);
     }
     @Override
     public int hashCode(){
-        return Objects.hash(Name);
+        return Objects.hash(name);
     }
 
 }
