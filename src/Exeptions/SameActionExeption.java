@@ -1,6 +1,6 @@
 package Exeptions;
 
-public class SameActionExeption extends Exception{
+public class SameActionExeption extends RuntimeException{
     public SameActionExeption(String message){
         super(message);
     }
