@@ -16,7 +16,7 @@ public class Main {
         Malishka kisonka = new Kisonka("волосы кудряшками", "веселые, озорные глаза", "лукавая рожица с остреньким носиком");
         Door hole = new Door();
         hole.getHole();
-        doorInteraction i = new doorInteraction() {
+        DoorInteraction i = new DoorInteraction() {
             @Override
             public void lookIn(Person obj) {
                 System.out.println(obj.getName() + " подглядывает в дверную скважину. ");
@@ -54,10 +54,10 @@ public class Main {
             neznaika.doAction(Actions.LISTEN, "шаги. ");
             i.unlockDoor(kisonka);
             neznaika.doAction(Actions.SEE, kisonka);
-            Kisonka.malishkaDescription description = ((Kisonka) kisonka).getDescription();
+            Kisonka.MalishkaDescription description = ((Kisonka) kisonka).getDescription();
             System.out.println("У нее " + description.getHair() + ", " + description.getEyes() + ", " + description.getFace());
         }catch (SameActionExeption e){
-            System.err.println("Ой, действия совпадают!");
+            e.getMessage();
         }
     }
 }
