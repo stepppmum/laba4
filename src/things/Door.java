@@ -26,7 +26,7 @@ public class Door extends Thing{
         try{
             Hole.setSize(5);
         } catch (KeyHoleSizeExeption e){
-            System.err.println("Неверно задан размер");
+            e.getMessage();
         }
     }
 
