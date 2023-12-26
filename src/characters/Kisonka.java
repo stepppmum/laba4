@@ -1,36 +1,36 @@
 package characters;
 
-import Actions.doorInteraction;
+import Actions.DoorInteraction;
 
 public class Kisonka extends Malishka{
-    private String Hair, Eyes, Face;
-    public Kisonka(String Hair, String Eyes, String Face){
+    private String hair, eyes, face;
+    public Kisonka(String hair, String eyes, String face){
         super.setName("Кисонька");
         super.setClothes("незнакомая");
-        this.Hair = Hair;
-        this.Eyes = Eyes;
-        this.Face = Face;
+        this.hair = hair;
+        this.eyes = eyes;
+        this.face = face;
     }
-    public interface malishkaDescription{
+    public interface MalishkaDescription{
         String getHair();
         String getEyes();
         String getFace();
     }
-    public malishkaDescription getDescription(){
-        class KisonkaDescription implements malishkaDescription{
-            final String Hair = Kisonka.this.Hair, Eyes = Kisonka.this.Eyes, Face = Kisonka.this.Face;
+    public MalishkaDescription getDescription(){
+        class KisonkaDescription implements MalishkaDescription{
+            final String hair = Kisonka.this.hair, eyes = Kisonka.this.eyes, face = Kisonka.this.face;
 
             @Override
             public String getHair(){
-                return this.Hair;
+                return this.hair;
             }
             @Override
             public  String getEyes(){
-                return this.Eyes;
+                return this.eyes;
             }
             @Override
             public String getFace(){
-                return this.Face;
+                return this.face;
             }
         }
         return new KisonkaDescription();
